@@ -14,7 +14,7 @@ export default function decorate(block) {
   }
   if (textDiv) {
     textHtml = textDiv.innerHTML;
-    // Cerca la posizione del testo come data attribute o classe
+    // Prendi la posizione dal dataset o default left
     if (block.dataset.textPosition) {
       textPosition = block.dataset.textPosition;
     } else if (block.classList.contains('text-right')) {
@@ -24,12 +24,12 @@ export default function decorate(block) {
 
   // Costruisce la struttura del blocco
   block.innerHTML = `
-    <div class="unipolhero-inner unipolhero-text-${textPosition}">
-      <div class="unipolhero-image">
-        ${imageUrl ? `<img src="${imageUrl}" alt="${imageAlt}" data-aue-prop="image" data-aue-label="Image">` : ''}
-      </div>
-      <div class="unipolhero-text" data-richtext-prop="text" data-aue-prop="text" data-aue-label="Text">
-        ${textHtml}
+    <div class="unipolhero-inner">
+      <div class="unipolhero-image-wrapper">
+        ${imageUrl ? `<img src="${imageUrl}" alt="${imageAlt}" class="unipolhero-image">` : ''}
+        <div class="unipolhero-text unipolhero-text-${textPosition}" data-richtext-prop="text" data-aue-prop="text" data-aue-label="Text">
+          ${textHtml}
+        </div>
       </div>
     </div>
   `;
