@@ -1,0 +1,46 @@
+.unipolhero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.unipolhero-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+.unipolhero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.unipolhero-text {
+  flex: 1 1 300px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+.unipolhero-text-left .unipolhero-image {
+  order: 1;
+}
+.unipolhero-text-left .unipolhero-text {
+  order: 2;
+}
+.unipolhero-text-right .unipolhero-image {
+  order: 2;
+}
+.unipolhero-text-right .unipolhero-text {
+  order: 1;
+}
+@media (max-width: 800px) {
+  .unipolhero-inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .unipolhero-image,
+  .unipolhero-text {
+    order: unset !important;
+    flex-basis: 100%;
+  }
+}
