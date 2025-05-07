@@ -26,9 +26,9 @@ export default function decorate(block) {
   block.innerHTML = `
     <div class="unipolhero-inner unipolhero-text-${textPosition}">
       <div class="unipolhero-image">
-        ${imageUrl ? `<img src="${imageUrl}" alt="${imageAlt}">` : ''}
+        ${imageUrl ? `<img src="${imageUrl}" alt="${imageAlt}" data-aue-prop="image" data-aue-label="Image">` : ''}
       </div>
-      <div class="unipolhero-text">
+      <div class="unipolhero-text" data-richtext-prop="text" data-aue-prop="text" data-aue-label="Text">
         ${textHtml}
       </div>
     </div>
